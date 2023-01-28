@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import type { ButtonProps } from '../types';
-import styles from './Button.module.css'
+import styles from '../styles/Button.module.css'
 
 const Button: Component<ButtonProps> = (props) => {
 
