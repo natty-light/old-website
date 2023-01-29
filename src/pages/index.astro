@@ -5,12 +5,12 @@ import type { ButtonProps } from '../types';
 
 const buttons: ButtonProps[] = [
   {
-    destination: "https://github.com/natty-light",
-    content:"Link to My Github"
+    link: "https://github.com/natty-light",
+    content:"Link to My Github",
   },
   {
-    destination: "https://www.linkedin.com/in/nat-gallant-0b0b40234/",
-    content: "Link to My LinkedIn"
+    link: "https://www.linkedin.com/in/nat-gallant-0b0b40234/",
+    content: "Link to My LinkedIn",
   }
 ]
 ---
@@ -20,10 +20,10 @@ const buttons: ButtonProps[] = [
 		<div class="center">
       <h1 class="toptext">Hi, I'm <span class="fancytext">Nat</span></h1>
       <p class="text">I'm a developer with a penchant for silly projects using Go and OpenGL</p>
-      <p class="text">You've found my Work-In-Progress site which I am building using Astro and either SolidJS or VueJs</p>
+      <p class="text">You've found my Work-In-Progress site which I am building using Astro and either SolidJS</p>
       <p class="text">For now, if you like, check out my github profile!</p>
       <div class="container">
-        {buttons.map( (button) => <Button client:load destination={button.destination} content={button.content} />)}
+        {buttons.map( (button) =><Button client:load link={button.link} content={button.content} />)}
       </div>
     </div>
 
@@ -62,6 +62,9 @@ const buttons: ButtonProps[] = [
     display: flex;
     align-content: space-around;
     flex-direction: row;
+  }
+  .icon {
+    color: #F5A9B8;
   }
   .fancytext {
     color: #F5A9B8;

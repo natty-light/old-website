@@ -6,7 +6,7 @@ const Button: Component<ButtonProps> = (props) => {
 
   const clickHandler = (e:  MouseEvent & { currentTarget: HTMLAnchorElement; target: Element;}) => {
     e.preventDefault()
-    window.open(props.destination)
+    window.open(props.link)
 }
 
   return (
