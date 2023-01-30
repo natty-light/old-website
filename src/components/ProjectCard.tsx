@@ -16,7 +16,6 @@ const ProjectCard: Component<ProjectCardProps> = (props) => {
       </div>
     </>
   )
-
 }
 
 export default ProjectCard;

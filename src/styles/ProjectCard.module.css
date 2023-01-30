@@ -1,6 +1,6 @@
 .card {
   width: 30vw;
-  height: 10vw;
+  height: fit-content;
   color: white;
   border: 2px;
   border-color:#F5A9B8;
