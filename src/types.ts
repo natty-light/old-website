@@ -4,6 +4,8 @@ export interface ButtonProps {
 }
 
 export interface ProjectCardProps {
+  title: string;
   description: string;
+  buttonText: string;
   link: string;
 }

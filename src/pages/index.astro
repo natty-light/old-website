@@ -1,16 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button';
-import type { ButtonProps } from '../types';
+import ProjectCard from '../components/ProjectCard'
+import type { ButtonProps, ProjectCardProps } from '../types';
 
 const buttons: ButtonProps[] = [
   {
-    link: "https://github.com/natty-light",
-    content:"Link to My Github",
+    link: 'https://github.com/natty-light',
+    content:'Link to My Github',
   },
   {
-    link: "https://www.linkedin.com/in/nat-gallant-0b0b40234/",
-    content: "Link to My LinkedIn",
+    link: 'https://www.linkedin.com/in/nat-gallant-0b0b40234/',
+    content: 'Link to My LinkedIn',
+  }
+]
+
+const projectCards: ProjectCardProps[] = [
+  {
+    link: 'https://github.com/natty-light/life',
+    description: `Conway's Game of Life implemented in Golang using OpenGL`,
+    title: 'Life',
+    buttonText: 'Github Repository'
+  },
+  {
+    link: 'https://github.com/natty-light/quonkLang',
+    description: `A BrainF**k inspired Esolang to help geese and ducks to learn to code`,
+    title: 'QuonkLang',
+    buttonText: 'Github Repository'
+  },
+  {
+    link: 'https://github.com/natty-light/brickgl',
+    description: `A study in targeting OpenGL directly in Golang`,
+    title: 'BrickGL',
+    buttonText: 'Github Repository'
   }
 ]
 ---
@@ -22,11 +44,13 @@ const buttons: ButtonProps[] = [
       <p class="text">I'm a developer with a penchant for silly projects using Go and OpenGL</p>
       <p class="text">You've found my Work-In-Progress site which I am building using Astro and either SolidJS</p>
       <p class="text">For now, if you like, check out my github profile!</p>
-      <div class="container">
-        {buttons.map( (button) =><Button client:load link={button.link} content={button.content} />)}
-      </div>
     </div>
-
+    <div class="container">
+      {projectCards.map( (card) => <ProjectCard client:load link={card.link} description={card.description} buttonText={card.buttonText} title={card.title}/>)}
+    </div>
+    <div class="container">
+      {buttons.map( (button) => <Button client:load link={button.link} content={button.content} />)}
+    </div>
 	</main>
 </Layout>
 

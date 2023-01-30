@@ -1,0 +1,25 @@
+.card {
+  width: 30vw;
+  height: 10vw;
+  color: white;
+  border: 2px;
+  border-color:#F5A9B8;
+  border-style: solid;
+  border-radius: 10px;
+  transition: ease .2s;
+  margin: 0 8px 0 8px;
+  padding: 4px;
+}
+
+.card:hover {
+  border-color:white;
+  color:white;
+}
+
+.container {
+  display: flex;
+  align-content: space-around;
+  flex-direction: row;
+  align-items: end;
+  justify-content: end;
+}
