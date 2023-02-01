@@ -18,7 +18,7 @@ const CardCarousel: Component<CardCarouselProps> = (props) => {
   const [prev, setPrev] = createSignal<CardCarouselNode>(head.prev);
   const [next, setNext] = createSignal<CardCarouselNode>(head.next);
 
-  const cycleForward = (e: MouseEvent & {currentTarget: HTMLDivElement; target: Element;}) => {
+  const cycleBack = (e: MouseEvent & {currentTarget: HTMLDivElement; target: Element;}) => {
     e.preventDefault();
     const ptr: CardCarouselNode = focused();
     if (ptr && ptr.next && ptr.prev) {
@@ -28,7 +28,7 @@ const CardCarousel: Component<CardCarouselProps> = (props) => {
     }
   };
 
-  const cycleBack = (e: MouseEvent & {currentTarget: HTMLDivElement; target: Element;}) => {
+  const cycleForward = (e: MouseEvent & {currentTarget: HTMLDivElement; target: Element;}) => {
     e.preventDefault();
     const ptr: CardCarouselNode = focused();
     if (ptr && ptr.next && ptr.prev) {
