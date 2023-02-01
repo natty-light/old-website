@@ -13,5 +13,19 @@ export interface ProjectCardProps {
 }
 
 export interface CardCarouselProps {
+  header: string;
   cards: ProjectCardProps[]
+}
+
+export class CardCarouselNode {
+
+  card: ProjectCardProps;
+  next: CardCarouselNode;
+  prev: CardCarouselNode;
+
+  constructor(card: ProjectCardProps) {
+    this.card = card;
+    this.next=this.prev=this;
+  }
+  
 }

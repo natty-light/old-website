@@ -6,7 +6,7 @@
   border-color:#F5A9B8;
   border-style: solid;
   border-radius: 10px;
-  margin: 0 8px 0 8px;
+  margin: 0px 4px 4px 4px;
   padding: 4px;
 }
 
@@ -17,4 +17,8 @@
   flex-direction: row;
   align-items: end;
   justify-content: end;
+}
+
+.header {
+  color: white;
 }

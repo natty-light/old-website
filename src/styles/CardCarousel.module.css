@@ -2,3 +2,28 @@
   backdrop-filter: blur(6px);
   z-index: 10;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 8px 8px 8px 4px;
+  align-items: center;
+}
+
+.button {
+  width: 40%;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  background-color: #F5A9B8;
+  border: 2px;
+  border-color:#F5A9B8;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 8px 2px;
+}
+
+.button::selection {
+  background: transparent;
+}

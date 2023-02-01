@@ -1,53 +1,82 @@
 import { Component, createSignal } from 'solid-js';
-import type { CardCarouselProps } from '../types';
+import { CardCarouselProps, CardCarouselNode, ProjectCardProps } from '../types';
 import ProjectCard from './ProjectCard';
 import styles from '../styles/CardCarousel.module.css';
 
-const CardCarousel: Component<CardCarouselProps> = (props) => {
-  const [focused, setFocused] = createSignal(0);
-  const [prev, setPrev] = createSignal(props.cards.length-1);
-  const [next, setNext] = createSignal(1);
+const generateLinkedList = (cards: ProjectCardProps[]): CardCarouselNode => {
+  const nodes: CardCarouselNode[] = cards.map((card) => new CardCarouselNode(card))
+  nodes.forEach( (node, i) => {
+    node.next = i === nodes.length - 1 ? nodes[0] : nodes[i + 1];
+    node.prev = i === 0 ? nodes[nodes.length - 1] : nodes[i - 1];
+  });
+  return nodes[0];
+}
 
-  const cycleBack = (e:  MouseEvent & { currentTarget: HTMLAnchorElement; target: Element;}) => {
+const CardCarousel: Component<CardCarouselProps> = (props) => {
+  const head: CardCarouselNode = generateLinkedList(props.cards)
+  const [focused, setFocused] = createSignal<CardCarouselNode>(head);
+  const [prev, setPrev] = createSignal<CardCarouselNode>(head.prev);
+  const [next, setNext] = createSignal<CardCarouselNode>(head.next);
+
+  const cycleForward = (e: MouseEvent & {currentTarget: HTMLDivElement; target: Element;}) => {
     e.preventDefault();
+    const ptr: CardCarouselNode = focused();
+    if (ptr && ptr.next && ptr.prev) {
+      setFocused(ptr.prev);
+      setPrev(focused().prev);
+      setNext(focused().next);
+    }
   };
 
-  const cycleForward = (e:  MouseEvent & { currentTarget: HTMLAnchorElement; target: Element;}) => {
+  const cycleBack = (e: MouseEvent & {currentTarget: HTMLDivElement; target: Element;}) => {
     e.preventDefault();
+    const ptr: CardCarouselNode = focused();
+    if (ptr && ptr.next && ptr.prev) {
+      setFocused(ptr.next);
+      setPrev(focused().prev);
+      setNext(focused().next);
+    }
   };
 
   return (
     <>
-      <div class={styles.button} onClick={(e) => cycleBack}>
-        &#2303;
-      </div>
-      <div class={styles.unfocused}>
-        <ProjectCard
-          link={props.cards[prev()].link} 
-          description={props.cards[prev()].description} 
-          buttonText={props.cards[prev()].buttonText} 
-          title={props.cards[prev()].title}
-          />
-      </div>
-      <div class={styles.focused}>
-        <ProjectCard
-          link={props.cards[focused()].link} 
-          description={props.cards[focused()].description} 
-          buttonText={props.cards[focused()].buttonText} 
-          title={props.cards[focused()].title}
-          />
-      </div>
-      <div class={styles.unfocused} onClick={ (e) => cycleForward}>
-        <ProjectCard
-          link={props.cards[next()].link} 
-          description={props.cards[next()].description} 
-          buttonText={props.cards[next()].buttonText} 
-          title={props.cards[next()].title}
-          />
-      </div>
-      <div class={styles.button}>
-        &#2304;
+      <h3 class={styles.header}>
+        {props.header}
+      </h3>
+      <div class={styles.container}>
+        <div class={styles.button} onClick={(e) => cycleBack(e)}>
+          &#x2303; &#x2303; &#x2303;
+        </div>
+        <div class={styles.unfocused}>
+          <ProjectCard
+            link={prev().card.link}
+            description={prev().card.description}
+            buttonText={prev().card.buttonText} 
+            title={prev().card.title}
+            />
+        </div>
+        <div class={styles.focused}>
+          <ProjectCard
+            link={focused().card.link} 
+            description={focused().card.description} 
+            buttonText={focused().card.buttonText} 
+            title={focused().card.title}
+            />
+        </div>
+        <div class={styles.unfocused}>
+          <ProjectCard
+            link={next().card.link} 
+            description={next().card.description} 
+            buttonText={next().card.buttonText} 
+            title={next().card.title}
+            />
+        </div>
+        <div class={styles.button} onClick={ (e) => cycleForward(e)}>
+          &#x2304; &#x2304; &#x2304;
+        </div>
       </div>
     </>
   )
 }
+
+export default CardCarousel;

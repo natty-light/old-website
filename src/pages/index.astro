@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button';
 import ProjectCard from '../components/ProjectCard'
 import type { ButtonProps, ProjectCardProps } from '../types';
+import CardCarousel from '../components/CardCarousel';
 
 const buttons: ButtonProps[] = [
   {
@@ -38,34 +39,34 @@ const projectCards: ProjectCardProps[] = [
 ---
 
 <Layout title="ngallant.dev">
-	<main class="main">
-		<div class="center">
+	<div class="main">
+		<div class="left">
       <h1 class="toptext">Hi, I'm <span class="fancytext">Nat</span></h1>
-      <p class="text">I'm a developer with a penchant for silly projects using Go and OpenGL</p>
-      <p class="text">You've found my Work-In-Progress site which I am building using Astro and SolidJS</p>
-      <p class="text">For now, if you like, here are some of my projects, or alternatively, some places you can find out more about me</p>
+      <p>I'm a developer with a penchant for silly projects using Go and OpenGL</p>
+      <p>You've found my Work-In-Progress site which I am building using Astro and SolidJS</p>
+      <p>For now, if you like, here are some of my projects, or alternatively, some places you can find out more about me</p>
     </div>
-    <div class="container">
-      {projectCards.map( (card) => <ProjectCard client:load link={card.link} description={card.description} buttonText={card.buttonText} title={card.title}/>)}
+    <div class="right">
+      <CardCarousel client:load cards={projectCards} header={"my projects"}/>
     </div>
-    <div class="container">
-      {buttons.map( (button) => <Button client:load link={button.link} content={button.content} />)}
-    </div>
-	</main>
+	</div>
+  <div class="footer">
+    {buttons.map( (button) => <Button client:load link={button.link} content={button.content} />)}
+  </div>
 </Layout>
 
 <style>
   .main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     background-color: black;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     z-index: 0;
   }
-  .center {
+  .left {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,16 +77,38 @@ const projectCards: ProjectCardProps[] = [
     border-color:#F5A9B8;
     border-style: solid;
     border-radius: 10px;
-    padding: 5% 15% 5% 15%;
+    padding: 8px 8px 8px 8px;
+    width: 60vw;
+    height: 60vh;
+    color: white;
+    z-index: 0;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #2828304d;
+    backdrop-filter: blur(6px);
+    border: 2px;
+    border-color:#F5A9B8;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 8px 8px 8px 8px;
     width: fit-content;
     height: fit-content;
     color: white;
-    z-index: 3;
+    z-index: 0;
   }
-  .container {
+
+  .footer {
     display: flex;
-    align-content: space-around;
     flex-direction: row;
+    width: 100vw;
+    height: 20vh;
+    align-items: center;
+    justify-items: center;
   }
   .icon {
     color: #F5A9B8;
@@ -95,9 +118,6 @@ const projectCards: ProjectCardProps[] = [
     padding: 0 8px 0 8px;
   }
     
-  .text {
-    color: white;
-  }
 
   .toptext {
     font-size: larger;
