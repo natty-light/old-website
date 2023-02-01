@@ -23,8 +23,8 @@ const CardCarousel: Component<CardCarouselProps> = (props) => {
     const ptr: CardCarouselNode = focused();
     if (ptr && ptr.next && ptr.prev) {
       setFocused(ptr.prev);
-      setPrev(focused().prev);
-      setNext(focused().next);
+      setPrev(ptr.prev.prev);
+      setNext(ptr);
     }
   };
 
@@ -33,8 +33,8 @@ const CardCarousel: Component<CardCarouselProps> = (props) => {
     const ptr: CardCarouselNode = focused();
     if (ptr && ptr.next && ptr.prev) {
       setFocused(ptr.next);
-      setPrev(focused().prev);
-      setNext(focused().next);
+      setPrev(ptr);
+      setNext(ptr.next.next);
     }
   };
 
