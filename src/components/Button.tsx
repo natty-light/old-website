@@ -13,7 +13,7 @@ const Button: Component<ButtonProps> = (props) => {
     <>
       <a
         class={styles.button}
-        href='#'
+        href={props.link}
         onClick={(e) => clickHandler(e)}
       >
         <div>
