@@ -1,15 +1,15 @@
 .unfocusedtop {
   backdrop-filter: blur(6px);
-  z-index: -1;
-  transform: translateY(30%) scale(98%);
+  z-index: 1;
+  transform: scale(98%);
   background-color: #2828304d;
   border-radius: 10px;
 }
 
 .unfocusedbottom {
   backdrop-filter: blur(6px);
-  z-index: -1;
-  transform: translateY(-30%) scale(98%);
+  z-index: 1;
+  transform: scale(98%);
   background-color: #2828304d;
   border-radius: 10px;
 }
@@ -21,17 +21,15 @@
 
 .main {
   display: flex;
-  align-content: space-around;
   flex-direction: column;
+  justify-items: center;
   justify-content: center;
-
 }
 .container {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 8px 8px 8px 4px;
-  margin: -12% 0;
   align-items: center;
 }
 
