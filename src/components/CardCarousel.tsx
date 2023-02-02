@@ -15,16 +15,12 @@ const generateLinkedList = (cards: ProjectCardProps[]): CardCarouselNode => {
 const CardCarousel: Component<CardCarouselProps> = (props) => {
   const head: CardCarouselNode = generateLinkedList(props.cards)
   const [focused, setFocused] = createSignal<CardCarouselNode>(head);
-  const [prev, setPrev] = createSignal<CardCarouselNode>(head.prev);
-  const [next, setNext] = createSignal<CardCarouselNode>(head.next);
 
   const cycleBack = (e: MouseEvent & {currentTarget: HTMLDivElement; target: Element;}) => {
     e.preventDefault();
     const ptr: CardCarouselNode = focused();
     if (ptr && ptr.next && ptr.prev) {
       setFocused(ptr.prev);
-      setPrev(ptr.prev.prev);
-      setNext(ptr);
     }
   };
 
@@ -33,26 +29,24 @@ const CardCarousel: Component<CardCarouselProps> = (props) => {
     const ptr: CardCarouselNode = focused();
     if (ptr && ptr.next && ptr.prev) {
       setFocused(ptr.next);
-      setPrev(ptr);
-      setNext(ptr.next.next);
     }
   };
 
   return (
-    <>
+    <div class={styles.main}>
       <h3 class={styles.header}>
         {props.header}
       </h3>
+      <div class={styles.button} onClick={(e) => cycleBack(e)}>
+        &#x2303; &#x2303; &#x2303;
+      </div>
       <div class={styles.container}>
-        <div class={styles.button} onClick={(e) => cycleBack(e)}>
-          &#x2303; &#x2303; &#x2303;
-        </div>
-        <div class={styles.unfocused}>
+        <div class={styles.unfocusedtop}>
           <ProjectCard
-            link={prev().card.link}
-            description={prev().card.description}
-            buttonText={prev().card.buttonText} 
-            title={prev().card.title}
+            link={focused().prev.card.link}
+            description={focused().prev.card.description}
+            buttonText={focused().prev.card.buttonText} 
+            title={focused().prev.card.title}
             />
         </div>
         <div class={styles.focused}>
@@ -63,19 +57,19 @@ const CardCarousel: Component<CardCarouselProps> = (props) => {
             title={focused().card.title}
             />
         </div>
-        <div class={styles.unfocused}>
+        <div class={styles.unfocusedbottom}>
           <ProjectCard
-            link={next().card.link} 
-            description={next().card.description} 
-            buttonText={next().card.buttonText} 
-            title={next().card.title}
+            link={focused().next.card.link} 
+            description={focused().next.card.description} 
+            buttonText={focused().next.card.buttonText} 
+            title={focused().next.card.title}
             />
         </div>
-        <div class={styles.button} onClick={ (e) => cycleForward(e)}>
-          &#x2304; &#x2304; &#x2304;
-        </div>
       </div>
-    </>
+      <div class={styles.button} onClick={ (e) => cycleForward(e)}>
+        &#x2304; &#x2304; &#x2304;
+      </div>
+    </div>
   )
 }
 

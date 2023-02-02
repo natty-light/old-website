@@ -1,20 +1,44 @@
-.unfocused {
+.unfocusedtop {
   backdrop-filter: blur(6px);
-  z-index: 10;
+  z-index: -1;
+  transform: translateY(30%) scale(98%);
+  background-color: #2828304d;
+  border-radius: 10px;
 }
 
+.unfocusedbottom {
+  backdrop-filter: blur(6px);
+  z-index: -1;
+  transform: translateY(-30%) scale(98%);
+  background-color: #2828304d;
+  border-radius: 10px;
+}
+
+.focused {
+  z-index: 10;
+  border-radius: 10px;
+}
+
+.main {
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+
+}
 .container {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 8px 8px 8px 4px;
+  margin: -12% 0;
   align-items: center;
 }
 
 .button {
   width: 40%;
   text-align: center;
-  color: white;
+  color: black;
   font-weight: bolder;
   background-color: #F5A9B8;
   border: 2px;
@@ -22,8 +46,16 @@
   border-style: solid;
   border-radius: 10px;
   margin: 8px 2px;
+  transition: ease .2s;
+  z-index: inherit;
 }
 
 .button::selection {
   background: transparent;
+}
+
+.button:hover {
+  background-color: white;
+  border-color: white;
+  
 }
