@@ -1,4 +1,5 @@
 export interface FooterProps {
+  header: string;
   buttons: ButtonProps[];
 }
 export interface ButtonProps {

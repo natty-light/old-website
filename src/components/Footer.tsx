@@ -6,8 +6,11 @@ import Button from './Button';
 const Footer: Component<FooterProps> = (props) => {
 
   return (
-    <div class={styles.footer}>
-      {props.buttons.map( (button) => <Button link={button.link} content={button.content} />)}
+    <div class={styles.main}>
+      <h3 class = {styles.header}> {props.header}</h3>
+      <div class={styles.container}> 
+        {props.buttons.map( (button) => <Button link={button.link} content={button.content} />)}
+      </div>  
     </div>
   );
 }

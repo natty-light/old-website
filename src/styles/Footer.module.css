@@ -1,6 +1,6 @@
-.footer {
+.main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: fit-content;
   height: 20vh;
   background-color: #2828304d;
@@ -9,7 +9,17 @@
   border-color:#F5A9B8;
   border-style: solid;
   border-radius: 10px;
-  padding: 8px 8px 8px 8px;
+  padding: 8px 36px 8px 36px;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.header {
+  width: 100%;
+  text-justify: left;
 }
