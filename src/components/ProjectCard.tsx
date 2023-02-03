@@ -6,15 +6,13 @@ import Button from './Button';
 const ProjectCard: Component<ProjectCardProps> = (props) => {
 
   return(
-    <>
-      <div class={styles.card}>
-        <h3 class={styles.header}>{props.title}</h3>
-        <p>{props.description}</p>
-        <div class={styles.container}>
-          <Button content={props.buttonText} link={props.link}/>
-        </div>
+    <div class={styles.card}>
+      <h3 class={styles.header}>{props.title}</h3>
+      <p>{props.description}</p>
+      <div class={styles.container}>
+        <Button content={props.buttonText} link={props.link}/>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: 20vh;
+  background-color: #2828304d;
+  backdrop-filter: blur(6px);
+  border: 2px;
+  border-color:#F5A9B8;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 8px 8px 8px 8px;
+  justify-content: center;
+  align-items: center;
+}

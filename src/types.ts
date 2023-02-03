@@ -1,5 +1,6 @@
-import type ProjectCard from './components/ProjectCard';
-
+export interface FooterProps {
+  buttons: ButtonProps[];
+}
 export interface ButtonProps {
   link: string;
   content: string;

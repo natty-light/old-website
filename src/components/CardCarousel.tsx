@@ -41,7 +41,7 @@ const CardCarousel: Component<CardCarouselProps> = (props) => {
         &#x2303; &#x2303; &#x2303;
       </div>
       <div class={styles.container}>
-        <div class={styles.unfocusedtop}>
+        <div class={styles.unfocused}>
           <ProjectCard
             link={focused().prev.card.link}
             description={focused().prev.card.description}
@@ -57,7 +57,7 @@ const CardCarousel: Component<CardCarouselProps> = (props) => {
             title={focused().card.title}
             />
         </div>
-        <div class={styles.unfocusedbottom}>
+        <div class={styles.unfocused}>
           <ProjectCard
             link={focused().next.card.link} 
             description={focused().next.card.description} 
