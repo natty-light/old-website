@@ -17,6 +17,7 @@
 .container {
   display: flex;
   flex-direction: row;
+  padding-bottom: 8px;
 }
 
 .header {
