@@ -1,0 +1,79 @@
+.overlay {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #2828304d;
+  backdrop-filter: blur(6px);
+  z-index: 15;
+}
+
+.resume {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.closebutton {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 8px;
+  color: black;
+  font-weight: bolder;
+  background-color: #F5A9B8;
+  border: 2px;
+  border-color:#F5A9B8;
+  border-style: solid;
+  border-radius: 10px;
+  transition: ease .2s;
+  z-index: 20;
+}
+
+.closebutton::selection {
+  background: transparent;
+}
+
+.closebutton:hover {
+  background-color: white;
+  border-color: white;
+}
+
+.button {
+  width: fit-content;
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+  background-color: #F5A9B8;
+  border: 2px;
+  border-color:#F5A9B8;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 8px 2px;
+  transition: ease .2s;
+  z-index: inherit;
+}
+
+.button::selection {
+  background: transparent;
+}
+
+.button:hover {
+  background-color: white;
+  border-color: white;
+  
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

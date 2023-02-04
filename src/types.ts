@@ -29,5 +29,9 @@ export class CardCarouselNode {
     this.card = card;
     this.next=this.prev=this;
   }
-  
+}
+
+export interface ResumeOverlayProps {
+  file: string;
+  buttontext: string;
 }

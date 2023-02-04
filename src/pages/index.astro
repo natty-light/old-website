@@ -6,8 +6,8 @@ import Footer from '../components/Footer';
 
 import projectCards from '../../content/projects.json';
 import buttons from '../../content/buttons.json';
+import ResumeOverlay from '../components/ResumeOverlay';
 ---
-
 <Layout title="ngallant.dev">
 	<div class="main">
 		<div class="left">
@@ -18,6 +18,7 @@ import buttons from '../../content/buttons.json';
       <CardCarousel client:load cards={projectCards} header={"my projects"}/>
     </div>
 	</div>
+  <ResumeOverlay client:visible file="content/Resume_Nat_Gallant_Developer.pdf" buttontext="my resume"/>
 </Layout>
 
 <style>
@@ -28,6 +29,7 @@ import buttons from '../../content/buttons.json';
     align-items: flex-start;
     background-color: black;
     z-index: 0;
+    height: 90vh;
   }
  
   .left {
