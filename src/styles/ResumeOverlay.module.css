@@ -16,7 +16,10 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
+  background-color: #2828304d;
+  backdrop-filter: blur(6px);
 }
+
 
 .closebutton {
   width: fit-content;

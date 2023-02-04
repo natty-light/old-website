@@ -18,7 +18,7 @@ const ResumeOverlay: Component<ResumeOverlayProps> = (props) => {
         <div class={styles.closebutton} onclick={(e) => handleButtonClick(e)}>
           X
         </div>
-        <iframe src={props.file} class={styles.resume}/>
+        <object data={props.file} class={styles.resume} type='application/pdf'></object>
       </div>
     : <div class={styles.container}>
         <div class={styles.button} onclick={(e) => handleButtonClick(e)}>
