@@ -9,6 +9,14 @@ const ResumeOverlay: Component<ResumeOverlayProps> = (props) => {
     e.preventDefault();
     console.log(visible())
     setVisible( () => !visible())
+    if (visible()) {
+      window.scrollTo(
+        {
+          top: 0,
+          behavior: 'smooth'
+        }
+      );
+    }
   }
 
   return(
