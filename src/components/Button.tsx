@@ -17,7 +17,7 @@ const Button: Component<ButtonProps> = (props) => {
         href={props.link}
         onClick={(e) => clickHandler(e)}
       >
-        <Icon icon={"mdi:".concat(props.icon)}/>
+        <Icon icon={props.icon}/>
         <div>
           {props.content}
         </div>
