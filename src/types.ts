@@ -5,6 +5,7 @@ export interface FooterProps {
 export interface ButtonProps {
   link: string;
   content: string;
+  icon: string;
 }
 
 export interface ProjectCardProps {

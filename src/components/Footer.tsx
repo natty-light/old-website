@@ -9,7 +9,7 @@ const Footer: Component<FooterProps> = (props) => {
     <div class={styles.main}>
       <h3 class = {styles.header}> {props.header}</h3>
       <div class={styles.container}> 
-        {props.buttons.map( (button) => <Button link={button.link} content={button.content} />)}
+        {props.buttons.map( (button) => <Button link={button.link} content={button.content} icon={button.icon}/>)}
       </div>  
     </div>
   );

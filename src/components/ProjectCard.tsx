@@ -10,7 +10,7 @@ const ProjectCard: Component<ProjectCardProps> = (props) => {
       <h3 class={styles.header}>{props.title}</h3>
       <p>{props.description}</p>
       <div class={styles.container}>
-        <Button content={props.buttonText} link={props.link}/>
+        <Button content={props.buttonText} link={props.link} icon="github"/>
       </div>
     </div>
   )

@@ -1,10 +1,12 @@
 [
   {
     "link": "https://github.com/natty-light",
-    "content":"Link to My Github"
+    "content":"Link to My Github",
+    "icon": "github"
   },
   {
     "link": "https://www.linkedin.com/in/nat-gallant-0b0b40234/",
-    "content": "Link to My LinkedIn"
+    "content": "Link to My LinkedIn",
+    "icon": "linkedin"
   }
 ]

@@ -1,4 +1,5 @@
 import type { Component } from 'solid-js';
+import { Icon } from '@iconify-icon/solid';
 import type { ButtonProps } from '../types';
 import styles from '../styles/Button.module.css'
 
@@ -16,6 +17,7 @@ const Button: Component<ButtonProps> = (props) => {
         href={props.link}
         onClick={(e) => clickHandler(e)}
       >
+        <Icon icon={"mdi:".concat(props.icon)}/>
         <div>
           {props.content}
         </div>
