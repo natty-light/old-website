@@ -11,11 +11,11 @@ import ResumeOverlay from '../components/ResumeOverlay';
 <Layout title="ngallant.dev">
 	<div class="main">
 		<div class="left">
-      <Island client:load />
+      <Island />
       <Footer client:load buttons={buttons} header="my links"/>
     </div>
     <div class="right">
-      <CardCarousel client:load cards={projectCards} header={"my projects"}/>
+      <CardCarousel client:load cards={projectCards} header="my projects"/>
     </div>
 	</div>
   <ResumeOverlay client:visible file="https://drive.google.com/file/d/1y4pYUa_pT-31m65ygiONpszJgS9dMU8Q/preview" buttontext="my resume"/>
