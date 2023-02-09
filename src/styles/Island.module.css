@@ -23,3 +23,9 @@
   padding: 36px 8px 36px 8px;
   margin-bottom: 10%;
 }
+
+.paragraph {
+  text-align: center;
+  padding: 8px 8px 8px 8px;
+  font-size: large;
+}
