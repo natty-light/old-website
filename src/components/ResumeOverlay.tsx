@@ -7,7 +7,6 @@ const ResumeOverlay: Component<ResumeOverlayProps> = (props) => {
 
   const handleButtonClick = (e: MouseEvent & {currentTarget: HTMLDivElement; target: Element;}) => {
     e.preventDefault();
-    console.log(visible())
     setVisible( () => !visible())
     if (visible()) {
       window.scrollTo(

@@ -23,5 +23,11 @@
     "description": "A pong clone implemented in C++ using OpenGL",
     "title": "Pong by Nat :)",
     "buttonText": "Github Repository"
+  },
+  {
+    "link": "https://github.com/natty-light/natty-light.github.io",
+    "description": "My portfolio website (this site!)",
+    "title": "Personal Website",
+    "buttonText": "Github Repository"
   }
 ]

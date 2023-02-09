@@ -1,13 +1,11 @@
 .unfocused {
   backdrop-filter: blur(6px);
-  z-index: 1;
   transform: scale(98%);
   background-color: #2828304d;
   border-radius: 10px;
 }
 
 .focused {
-  z-index: 1;
   border-radius: 10px;
 }
 
@@ -46,7 +44,6 @@
   border-radius: 10px;
   margin: 8px 2px;
   transition: ease .2s;
-  z-index: inherit;
 }
 
 .button::selection {
@@ -56,5 +53,4 @@
 .button:hover {
   background-color: white;
   border-color: white;
-  
 }

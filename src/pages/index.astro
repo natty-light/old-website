@@ -13,12 +13,12 @@ import ResumeOverlay from '../components/ResumeOverlay';
 		<div class="left">
       <Island />
       <Footer client:load buttons={buttons} header="my links"/>
+      <ResumeOverlay client:visible file="https://drive.google.com/file/d/1y4pYUa_pT-31m65ygiONpszJgS9dMU8Q/preview" buttontext="my resume"/>
     </div>
     <div class="right">
       <CardCarousel client:load cards={projectCards} header="my projects"/>
     </div>
 	</div>
-  <ResumeOverlay client:visible file="https://drive.google.com/file/d/1y4pYUa_pT-31m65ygiONpszJgS9dMU8Q/preview" buttontext="my resume"/>
 </Layout>
 
 <style>
@@ -26,10 +26,9 @@ import ResumeOverlay from '../components/ResumeOverlay';
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
     background-color: black;
-    z-index: 0;
-    height: 90vh;
+    height: 100%;
   }
  
   .left {
@@ -40,7 +39,6 @@ import ResumeOverlay from '../components/ResumeOverlay';
     padding: 8px 8px 8px 8px;
     width: 60%;
     color: white;
-    z-index: 0;
   }
 
   .right {
@@ -53,7 +51,6 @@ import ResumeOverlay from '../components/ResumeOverlay';
     height: fit-content;
     min-height: 60%;
     color: white;
-    z-index: 0;
   }
 
   .icon {
