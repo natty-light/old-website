@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+
+  width: 100%;
+}
+
+.tab {
+  color:#F5A9B8;
+  padding: 4px 8px;
+  text-decoration: none;
+}

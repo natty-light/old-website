@@ -36,3 +36,12 @@ export type ResumeOverlayProps = {
   file: string;
   buttontext: string;
 }
+
+export type HeaderProps = {
+  tabs: HeaderTab[];
+}
+
+export type HeaderTab = {
+  content: string;
+  dest: string;
+}

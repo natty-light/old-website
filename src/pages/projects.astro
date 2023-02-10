@@ -1,0 +1,15 @@
+---
+import Header from '../components/Header';
+import Layout from '../layouts/Layout.astro';
+import headerTabs from '../../content/headertabs.json';
+---
+
+<Layout title="ngallant.dev | Projects"> 
+  <div class="body">
+    <Header client:load tabs={headerTabs} />
+  </div>
+</Layout>
+
+<style>
+
+</style>

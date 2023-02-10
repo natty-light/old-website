@@ -3,25 +3,36 @@ import Layout from '../layouts/Layout.astro';
 import CardCarousel from '../components/CardCarousel';
 import Island from '../components/Island';
 import Footer from '../components/Footer';
+import ResumeOverlay from '../components/ResumeOverlay';
+import Header from '../components/Header';
 
 import projectCards from '../../content/projects.json';
 import buttons from '../../content/buttons.json';
-import ResumeOverlay from '../components/ResumeOverlay';
+import headerTabs from '../../content/headertabs.json';
 ---
 <Layout title="ngallant.dev">
-	<div class="main">
-		<div class="left">
-      <Island />
-      <Footer client:load buttons={buttons} header="my links"/>
-      <ResumeOverlay client:visible file="https://drive.google.com/file/d/1y4pYUa_pT-31m65ygiONpszJgS9dMU8Q/preview" buttontext="my resume"/>
+  <div class="body">
+    <Header client:load tabs={headerTabs} />
+    <div class="main">
+      <div class="left">
+        <Island />
+        <Footer client:load buttons={buttons} header="my links"/>
+        <ResumeOverlay client:visible file="https://drive.google.com/file/d/1y4pYUa_pT-31m65ygiONpszJgS9dMU8Q/preview" buttontext="my resume"/>
+      </div>
+      <div class="right">
+        <CardCarousel client:load cards={projectCards} header="my projects"/>
+      </div>
     </div>
-    <div class="right">
-      <CardCarousel client:load cards={projectCards} header="my projects"/>
-    </div>
-	</div>
+  </div>
 </Layout>
 
 <style>
+  .body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
   .main {
     display: flex;
     flex-direction: row;
