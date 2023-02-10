@@ -1,21 +1,21 @@
-export interface FooterProps {
+export type FooterProps = {
   header: string;
   buttons: ButtonProps[];
 }
-export interface ButtonProps {
+export type ButtonProps = {
   link: string;
   content: string;
   icon: string;
 }
 
-export interface ProjectCardProps {
+export type ProjectCardProps = {
   title: string;
   description: string;
   buttonText: string;
   link: string;
 }
 
-export interface CardCarouselProps {
+export type CardCarouselProps = {
   header: string;
   cards: ProjectCardProps[]
 }
@@ -32,7 +32,7 @@ export class CardCarouselNode {
   }
 }
 
-export interface ResumeOverlayProps {
+export type ResumeOverlayProps = {
   file: string;
   buttontext: string;
 }
