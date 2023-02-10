@@ -2,6 +2,7 @@ export type FooterProps = {
   header: string;
   buttons: ButtonProps[];
 }
+
 export type ButtonProps = {
   link: string;
   content: string;
@@ -44,4 +45,11 @@ export type HeaderProps = {
 export type HeaderTab = {
   content: string;
   dest: string;
+}
+
+export type ProjectProps = {
+  title: string;
+  text: string[];
+  buttonText: string;
+  link: string;
 }
