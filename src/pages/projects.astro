@@ -1,15 +1,33 @@
 ---
 import Header from '../components/Header';
 import Layout from '../layouts/Layout.astro';
+import Project from '../components/projects/Project';
 import headerTabs from '../../content/headertabs.json';
+import projects from '../../content/projects.json';
 ---
 
 <Layout title="ngallant.dev | Projects"> 
   <div class="body">
     <Header client:load tabs={headerTabs} />
+      {
+        projects.map( (project) =>
+          <Project
+            title={project.title}
+            text={project.text}
+            buttonText={project.buttonText}
+            link={project.link}
+            buttonIcon={project.buttonIcon}
+          />
+          )
+      }
   </div>
 </Layout>
 
 <style>
-
+  .body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 </style>

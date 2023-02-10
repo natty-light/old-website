@@ -52,4 +52,5 @@ export type ProjectProps = {
   text: string[];
   buttonText: string;
   link: string;
+  buttonIcon: string;
 }
