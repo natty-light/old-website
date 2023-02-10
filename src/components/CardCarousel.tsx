@@ -1,6 +1,6 @@
 import { Component, createSignal } from 'solid-js';
 import { CardCarouselProps, CardCarouselNode, ProjectCardProps } from '../types';
-import ProjectCard from './ProjectCard';
+import ProjectCard from './projects/ProjectCard';
 import styles from '../styles/CardCarousel.module.css';
 
 const generateLinkedList = (cards: ProjectCardProps[]): CardCarouselNode => {

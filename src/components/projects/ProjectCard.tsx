@@ -1,7 +1,7 @@
 import type { Component } from 'solid-js';
-import type { ProjectCardProps } from '../types';
-import styles from '../styles/ProjectCard.module.css';
-import Button from './Button';
+import type { ProjectCardProps } from '../../types';
+import styles from '../../styles/ProjectCard.module.css';
+import Button from '../Button';
 
 const ProjectCard: Component<ProjectCardProps> = (props) => {
 
